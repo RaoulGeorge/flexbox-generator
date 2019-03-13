@@ -1,14 +1,20 @@
 import React from 'react';
 import Left from '../left/index';
 import Right from '../right/index';
-import './flexbox-generator.scss';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+`;
 
 const FlexboxGenerator = () => {
   return (
-    <div className="container">
+    <Container>
       <Left />
       <Right />
-    </div>
+    </Container>
   );
 };
 

@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import FlexboxGenerator from './containers/flexbox-generator/index';
-import './App.css';
+import styled from 'styled-components';
+
+const AppWrapper = styled.div`
+  text-align: center;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <AppWrapper>
         <FlexboxGenerator />
-      </div>
+      </AppWrapper>
     );
   }
 }
