@@ -4,16 +4,15 @@ import styled from 'styled-components';
 
 const AppWrapper = styled.div`
   text-align: center;
+  min-height: 100vh;
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <AppWrapper>
-        <FlexboxGenerator />
-      </AppWrapper>
-    );
-  }
-}
+const App = () => {
+  return (
+    <AppWrapper>
+      <FlexboxGenerator />
+    </AppWrapper>
+  );
+};
 
 export default App;
