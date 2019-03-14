@@ -10,7 +10,8 @@ const RightContainer = styled.div`
 
 const RightContent = styled.div``;
 
-const Right = () => {
+const Right = props => {
+  debugger;
   return (
     <RightContainer>
       <RightContent> Right </RightContent>

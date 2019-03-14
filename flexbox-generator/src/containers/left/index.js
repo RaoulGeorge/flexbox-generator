@@ -13,11 +13,11 @@ const LeftContainer = styled.div`
 `;
 
 const LeftContent = styled.div``;
-const Left = () => {
+const Left = ({ onChange }) => {
   return (
     <LeftContainer>
       <LeftContent>
-        <ControlPanel />
+        <ControlPanel onChange={onChange} />
       </LeftContent>
     </LeftContainer>
   );

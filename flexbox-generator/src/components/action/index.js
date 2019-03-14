@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
+import Options from './../options';
 
 const ActionWrapper = styled.div``;
 const PropertyContainer = styled.div``;
-const ValueContainer = styled.div``;
 
-const Actions = ({ action }) => {
+const Action = ({ property, values, onChange }) => {
+  const [selectedAction, setSelectedAction] = useState();
+  const _onChange = val => {
+    onChange(property, val);
+  };
   return (
     <ActionWrapper>
-      <PropertyContainer>align: items</PropertyContainer>
-      <ValueContainer />
+      <PropertyContainer>{property}</PropertyContainer>
+      <Options
+        selectedAction={selectedAction}
+        onChange={_onChange}
+        setSelectedAction={setSelectedAction}
+        options={values}
+      />
     </ActionWrapper>
   );
 };
 
-export default Actions;
+export default Action;

@@ -6,11 +6,11 @@ import Actions from './../actions';
 const ControlPanelWrapper = styled.div``;
 const Title = styled.h3``;
 
-const ControlPanel = () => {
+const ControlPanel = ({ onChange }) => {
   return (
     <ControlPanelWrapper>
       <Title>Parent Flex Properties</Title>
-      <Actions />
+      <Actions onChange={onChange} />
     </ControlPanelWrapper>
   );
 };
