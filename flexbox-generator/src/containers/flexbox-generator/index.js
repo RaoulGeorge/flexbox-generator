@@ -9,10 +9,10 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
-const initialState = { 'align-items': 'left', 'align-items1': 'right', 'align-items2': 'mid' };
+const initialState = { cssProps: { 'align-items': 'left', 'align-items1': 'right', 'align-items2': 'mid' } };
 
 const reducer = (state, action) => {
-  return { ...state, [action.property]: action.value };
+  return { ...state, cssProps: { ...state.cssProps, [action.property]: action.value } };
 };
 
 const FlexboxGenerator = () => {
