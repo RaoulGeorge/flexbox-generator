@@ -5,13 +5,16 @@ import PropTypes from 'prop-types';
 import Action from './../action';
 import { ACTIONS } from './../../constants/actions-constants';
 
-const ActionsWrapper = styled.div``;
+const ActionsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const Actions = ({ actions, onChange }) => {
   return (
     <ActionsWrapper>
-      {actions.map(({ property, options }) => (
-        <Action property={property} values={options} onChange={onChange} />
+      {actions.map(({ property, options, selected }) => (
+        <Action property={property} values={options} onChange={onChange} selected={selected} />
       ))}
     </ActionsWrapper>
   );
