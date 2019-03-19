@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ControlPanel from './../../components/control-panel';
-
+import CssOutput from './../../components/css-output';
 const LeftContainer = styled.div`
   flex: 1;
   border-right: 1px solid black;
@@ -12,12 +12,18 @@ const LeftContainer = styled.div`
   color: white;
 `;
 
-const LeftContent = styled.div``;
+const LeftContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+`;
 const Left = ({ onChange }) => {
   return (
     <LeftContainer>
       <LeftContent>
         <ControlPanel onChange={onChange} />
+        <CssOutput />
       </LeftContent>
     </LeftContainer>
   );
