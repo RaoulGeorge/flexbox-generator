@@ -21,15 +21,19 @@ const RightContainer = styled.div`
 `;
 
 const FlexParent = styled.div`
-  border: 1px solid red;
+  border: 4px solid black;
   min-height: 90vh;
   display: flex;
+  margin: 10px;
   ${props => createDynamicStyles(props.cssProps)}
 `;
 
 const FlexChild = styled.div`
-  border: 1px solid blue;
+  border: 3px solid purple;
+  border-radius: 3px;
   flex: 1;
+  margin: 10px;
+  font-size: 24px;
 `;
 
 const Right = ({ cssProps }) => {
