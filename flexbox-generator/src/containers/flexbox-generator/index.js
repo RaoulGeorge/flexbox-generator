@@ -1,6 +1,8 @@
 import React, { useReducer } from 'react';
 import Left from '../left/index';
 import Right from '../right/index';
+import { getIntitialState } from './../../utils';
+import { ACTIONS } from '../../constants/actions-constants';
 import styled from 'styled-components';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -17,7 +19,7 @@ const darkTheme = createMuiTheme({
   typography: { useNextVariants: true },
 });
 
-const initialState = { cssProps: { 'align-items': 'left', 'align-items1': 'right', 'align-items2': 'mid' } };
+const initialState = { cssProps: getIntitialState(ACTIONS) };
 
 const reducer = (state, action) => {
   return { ...state, cssProps: { ...state.cssProps, [action.property]: action.value } };
