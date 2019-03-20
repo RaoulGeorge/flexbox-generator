@@ -13,7 +13,7 @@ const CSSOutputContent = styled.div`
   border: 1px solid white;
   margin: 10px;
   text-align: left;
-  padding: 20px;
+  padding: 50px 20px;
 `;
 
 const CssOutput = ({ cssProps }) => {

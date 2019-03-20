@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FlexboxGenerator from './containers/flexbox-generator/index';
 import styled from 'styled-components';
 
