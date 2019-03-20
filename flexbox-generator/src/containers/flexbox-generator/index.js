@@ -33,7 +33,7 @@ const FlexboxGenerator = () => {
   return (
     <Container>
       <MuiThemeProvider theme={darkTheme}>
-        <Left onChange={_onChange} />
+        <Left onChange={_onChange} {...state} />
       </MuiThemeProvider>
 
       <Right {...state} />

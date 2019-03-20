@@ -18,12 +18,13 @@ const LeftContent = styled.div`
   justify-content: space-between;
   height: 100vh;
 `;
-const Left = ({ onChange }) => {
+const Left = ({ onChange, cssProps }) => {
+  debugger;
   return (
     <LeftContainer>
       <LeftContent>
         <ControlPanel onChange={onChange} />
-        <CssOutput />
+        <CssOutput cssProps={cssProps} />
       </LeftContent>
     </LeftContainer>
   );

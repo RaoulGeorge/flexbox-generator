@@ -1,22 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-const CSSOutputWrapper = styled.div``;
+const CSSOutputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const Title = styled.h1``;
 
 const CSSOutputContent = styled.div`
-  height: 400px;
-  width: 400px;
   border: 1px solid white;
   margin: 10px;
+  text-align: left;
+  padding: 20px;
 `;
 
-const CssOutput = () => {
+const CssOutput = ({ cssProps }) => {
   return (
     <CSSOutputWrapper>
       <Title>CSS Output</Title>
-      <CSSOutputContent />
+      <CSSOutputContent>
+        {Object.keys(cssProps).map(cssProp => (
+          <div>
+            {cssProp} : {cssProps[cssProp]}
+          </div>
+        ))}
+      </CSSOutputContent>
     </CSSOutputWrapper>
   );
 };
