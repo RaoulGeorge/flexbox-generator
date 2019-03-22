@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 const CSSOutputWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,19 +24,43 @@ const Copy = styled.div`
   cursor: pointer;
 `;
 
+const CSSOutput = styled.textarea`
+  height: 80px;
+  width: 200px;
+  background: black;
+  color: white;
+  font-size: 16px;
+`;
+
 const CssOutput = ({ cssProps }) => {
+  const stringifyCSS = cssProps => {
+    let copiedCSS = '';
+    Object.keys(cssProps).forEach(cssProp => {
+      copiedCSS += `${cssProp}: ${cssProps[cssProp]};\n`;
+    });
+    return copiedCSS;
+  };
+  const domEl = useRef(null);
+
+  const onClicked = () => {
+    domEl.current.select();
+    document.execCommand('copy');
+  };
+
   return (
     <CSSOutputWrapper>
       <Title>CSS Output</Title>
       <CSSOutputContent>
-        <Copy>
+        <Copy
+          onClick={() => {
+            onClicked();
+          }}
+        >
           <FontAwesomeIcon icon="copy" />
         </Copy>
-        {Object.keys(cssProps).map(cssProp => (
-          <div>
-            {cssProp} : {cssProps[cssProp]};
-          </div>
-        ))}
+        <CSSOutput ref={domEl} selectable>
+          {stringifyCSS(cssProps)}
+        </CSSOutput>
       </CSSOutputContent>
     </CSSOutputWrapper>
   );
