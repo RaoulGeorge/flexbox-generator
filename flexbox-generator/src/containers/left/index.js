@@ -19,7 +19,6 @@ const LeftContent = styled.div`
   height: 100vh;
 `;
 const Left = ({ onChange, cssProps }) => {
-  debugger;
   return (
     <LeftContainer>
       <LeftContent>

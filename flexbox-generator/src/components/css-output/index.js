@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const CSSOutputWrapper = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ const CssOutput = ({ cssProps }) => {
     <CSSOutputWrapper>
       <Title>CSS Output</Title>
       <CSSOutputContent>
+        <FontAwesomeIcon icon="copy" />
         {Object.keys(cssProps).map(cssProp => (
           <div>
             {cssProp} : {cssProps[cssProp]}
