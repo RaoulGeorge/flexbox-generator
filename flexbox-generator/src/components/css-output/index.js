@@ -15,6 +15,14 @@ const CSSOutputContent = styled.div`
   margin: 10px;
   text-align: left;
   padding: 50px 20px;
+  position: relative;
+`;
+
+const Copy = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 `;
 
 const CssOutput = ({ cssProps }) => {
@@ -22,10 +30,12 @@ const CssOutput = ({ cssProps }) => {
     <CSSOutputWrapper>
       <Title>CSS Output</Title>
       <CSSOutputContent>
-        <FontAwesomeIcon icon="copy" />
+        <Copy>
+          <FontAwesomeIcon icon="copy" />
+        </Copy>
         {Object.keys(cssProps).map(cssProp => (
           <div>
-            {cssProp} : {cssProps[cssProp]}
+            {cssProp} : {cssProps[cssProp]};
           </div>
         ))}
       </CSSOutputContent>
