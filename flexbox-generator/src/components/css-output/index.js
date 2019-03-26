@@ -25,11 +25,12 @@ const Copy = styled.div`
 `;
 
 const CSSOutput = styled.textarea`
-  height: 80px;
+  height: 120px;
   width: 200px;
   background: black;
   color: white;
   font-size: 16px;
+  border: none;
 `;
 
 const CssOutput = ({ cssProps }) => {
