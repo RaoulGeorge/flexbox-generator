@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { stringifyCSS } from './../../utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const CSSOutputWrapper = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ const CSSOutputWrapper = styled.div`
   align-items: center;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h3``;
 
 const CSSOutputContent = styled.div`
   border: 1px solid white;
@@ -34,13 +35,6 @@ const CSSOutput = styled.textarea`
 `;
 
 const CssOutput = ({ cssProps }) => {
-  const stringifyCSS = cssProps => {
-    let copiedCSS = '';
-    Object.keys(cssProps).forEach(cssProp => {
-      copiedCSS += `${cssProp}: ${cssProps[cssProp]};\n`;
-    });
-    return copiedCSS;
-  };
   const domEl = useRef(null);
 
   const onClicked = () => {
