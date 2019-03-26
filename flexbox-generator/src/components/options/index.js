@@ -42,7 +42,9 @@ const Options = ({ options, property, selected, onChange, classes }) => {
         <InputLabel>{property}</InputLabel>
         <Select onChange={onSelectChange} value={val}>
           {options.map(option => (
-            <MenuItem value={option}>{option}</MenuItem>
+            <MenuItem key={option} value={option}>
+              {option}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>

@@ -21,7 +21,7 @@ const RightContainer = styled.div`
 `;
 
 const FlexParent = styled.div`
-  border: 4px solid black;
+  border: 4px solid grey;
   min-height: 90vh;
   display: flex;
   margin: 10px;
@@ -30,10 +30,12 @@ const FlexParent = styled.div`
 
 const FlexChild = styled.div`
   border: 3px solid purple;
+  background: purple;
   border-radius: 3px;
   flex: 1;
   margin: 10px;
   font-size: 24px;
+  color: white;
 `;
 
 const Right = ({ cssProps }) => {

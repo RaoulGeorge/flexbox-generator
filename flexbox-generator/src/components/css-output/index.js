@@ -59,9 +59,7 @@ const CssOutput = ({ cssProps }) => {
         >
           <FontAwesomeIcon icon="copy" />
         </Copy>
-        <CSSOutput ref={domEl} selectable>
-          {stringifyCSS(cssProps)}
-        </CSSOutput>
+        <CSSOutput ref={domEl} selectable value={stringifyCSS(cssProps)} />
       </CSSOutputContent>
     </CSSOutputWrapper>
   );

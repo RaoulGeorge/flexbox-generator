@@ -9,7 +9,7 @@ export const ACTIONS = [
   {
     property: 'align-items',
     options: ['stretch', 'flex-start', 'flex-end', 'center', 'baseline'],
-    selected: 'stretch',
+    selected: 'center',
   },
   {
     property: 'align-content',

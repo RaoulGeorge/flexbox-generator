@@ -14,7 +14,7 @@ const Actions = ({ actions, onChange }) => {
   return (
     <ActionsWrapper>
       {actions.map(({ property, options, selected }) => (
-        <Action property={property} values={options} onChange={onChange} selected={selected} />
+        <Action key={property} property={property} values={options} onChange={onChange} selected={selected} />
       ))}
     </ActionsWrapper>
   );
