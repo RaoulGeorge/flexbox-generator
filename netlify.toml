@@ -1,0 +1,4 @@
+[build]
+base = "flexbox-generator/"
+publish = "build/"
+command = "yarn build"
